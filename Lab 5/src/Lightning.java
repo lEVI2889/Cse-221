@@ -23,6 +23,19 @@ public class Lightning {
         for (int i = 1; i <= n; i++) {
             Collections.sort(g.get(i));
         }
+        /*// Replace Collections.sort() with manual insertion sort
+        for (int i = 1; i <= n; i++) {
+            List<Integer> adj = graph.get(i);
+            for (int j = 1; j < adj.size(); j++) {
+                int key = adj.get(j);
+                int k = j - 1;
+                while (k >= 0 && adj.get(k) > key) {
+                    adj.set(k + 1, adj.get(k));
+                    k--;
+                }
+                adj.set(k + 1, key);
+            }
+        }*/
         bfs(g, s, d, n);
     }
 
